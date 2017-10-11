@@ -1,0 +1,115 @@
+import xlsxwriter
+
+#Global
+def write_in_worksheet(ws, column, text):
+    ws.write(column, text)
+
+columns = ['A1','B2','C2','D2', 'E2','F2','G2','H2','I2','J2','K2','L2','M2']
+
+day_column = columns[1]
+gaming_column = columns[2]
+programing_column = columns[3]
+bed_time_column = columns[4]
+woke_up_column = columns[5]
+study_column = columns[6]
+books_column = columns[7]
+exercise_column = columns[8]
+meditate_column = columns[9]
+nap_column = columns[10]
+work_column = columns[11]
+lecture_column = columns[12]
+
+#Values
+print 'Filename:'
+name = raw_input().lower()
+
+print 'Which day is it? '
+day = raw_input().lower()
+
+print 'How much time spent gaming?'
+gaming = raw_input()
+
+print 'How much time spent programing?'
+programing = raw_input()
+
+print 'When did you go to bed?'
+bed_time = raw_input()
+
+print 'When did you wake up?'
+woke_up = raw_input()
+
+print 'How much did you study?'
+study = raw_input()
+
+print 'How much have you been reading other books?'
+books = raw_input()
+
+print 'How much did you exercise?'
+exercise = raw_input()
+
+print 'How much did you meditate?'
+meditate = raw_input()
+
+print 'For how long did you nap?'
+nap = raw_input()
+
+print 'How much did you work?'
+work = raw_input()
+
+print 'For how long have you been on lectures today?'
+lecture = raw_input()
+
+#Skapa excel
+workbook = xlsxwriter.Workbook(name + '.xlsx')
+ws1 = workbook.add_worksheet()
+
+#title for colums
+write_in_worksheet(ws1, 'B1', 'Day')
+write_in_worksheet(ws1, 'C1', 'Gaming')
+write_in_worksheet(ws1, 'D1', 'Programing')
+write_in_worksheet(ws1, 'E1', 'Sleep')
+write_in_worksheet(ws1, 'F1', 'Time Awake')
+write_in_worksheet(ws1, 'G1', 'Studying')
+write_in_worksheet(ws1, 'H1', 'Book')
+write_in_worksheet(ws1, 'I1', 'Exercise')
+write_in_worksheet(ws1, 'J1', 'Medidation')
+write_in_worksheet(ws1, 'K1', 'Nap')
+write_in_worksheet(ws1, 'L1', 'Work')
+write_in_worksheet(ws1, 'M1', 'Lecture')
+
+#Values to excel
+#
+write_in_worksheet(ws1, day_column, day)
+#
+write_in_worksheet(ws1, gaming_column, gaming)
+#
+write_in_worksheet(ws1, programing_column, programing)
+#
+write_in_worksheet(ws1, bed_time_column, bed_time)
+#
+write_in_worksheet(ws1, woke_up_column, woke_up)
+#
+write_in_worksheet(ws1, study_column, study)
+#
+write_in_worksheet(ws1, books_column, books)
+#
+write_in_worksheet(ws1, exercise_column, exercise)
+#
+write_in_worksheet(ws1, meditate_column, meditate)
+#
+write_in_worksheet(ws1, nap_column, nap)
+#
+write_in_worksheet(ws1, work_column, work)
+#
+write_in_worksheet(ws1, lecture_column, lecture)
+
+#
+
+
+
+
+
+
+
+
+workbook.close()
